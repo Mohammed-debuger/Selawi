@@ -3,249 +3,445 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Selawi | Cybersecurity & Surveillance</title>
+  <title>Selawi | Advanced Cybersecurity & Surveillance Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary-bg: #0f1115;
+      --secondary-bg: #14161a;
+      --card-bg: #1a1d23;
+      --accent-color: #1da1f2; /* Bright Blue */
+      --accent-hover-color: #178acc;
+      --text-color: #e0e0e0;
+      --text-muted: #a0a0a0;
+      --heading-color: #ffffff;
+      --font-primary: 'Montserrat', Arial, sans-serif;
+      --section-padding: 60px 20px;
+      --card-padding: 25px;
+      --border-radius: 8px;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0f1115;
-      color: #e0e0e0;
+      font-family: var(--font-primary);
+      background-color: var(--primary-bg);
+      color: var(--text-color);
       text-align: center;
+      line-height: 1.6;
     }
+
     header {
-      background-color: #14161a;
-      padding: 40px 20px;
+      background-color: var(--secondary-bg);
+      padding: 30px 20px;
+      border-bottom: 1px solid #2a2d34;
     }
-    header img {
-      width: 100px;
+
+    header img.logo {
+      width: 80px; /* Slightly smaller for a cleaner look */
+      margin-bottom: 15px;
     }
-    header h1 {
-      margin-top: 10px;
-      font-size: 2.5em;
-      color: #1da1f2;
+
+    header h1.site-title {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 2.8em;
+      color: var(--heading-color);
+      font-weight: 700;
     }
+    header p.tagline {
+      font-size: 1.1em;
+      color: var(--accent-color);
+      margin-top: 0;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
     nav {
       margin-top: 20px;
     }
+
     nav a {
-      margin: 0 15px;
+      margin: 0 18px;
       text-decoration: none;
-      color: #1da1f2;
-      font-weight: bold;
+      color: var(--accent-color);
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
     }
+
+    nav a:hover {
+      color: var(--accent-hover-color);
+      text-decoration: underline;
+    }
+
     section {
-      padding: 40px 20px;
+      padding: var(--section-padding);
     }
-    .cta {
-      background-color: #1a1d23;
-      padding: 30px;
-      border-radius: 10px;
-      margin: 30px auto;
-      max-width: 600px;
+    section h2.section-title {
+        font-size: 2.2em;
+        color: var(--heading-color);
+        margin-bottom: 15px;
+        font-weight: 700;
     }
-    .why {
-      background-color: #1f2229;
-      padding: 40px 20px;
-      margin: 30px auto;
-      max-width: 1000px;
+    section p.section-subtitle {
+        font-size: 1.1em;
+        color: var(--text-muted);
+        max-width: 700px;
+        margin: 0 auto 40px auto;
+    }
+
+
+    /* Hero Section - Replaced .cta */
+    .hero {
+      background-color: var(--secondary-bg); /* Darker for emphasis */
+      padding: 80px 20px;
+      color: var(--text-color);
+    }
+    .hero h2 {
+      font-size: 2.5em;
+      color: var(--heading-color);
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+      color: var(--text-muted);
+    }
+    .hero .btn {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+    }
+    .hero .btn:hover {
+      background-color: var(--accent-hover-color);
+    }
+
+
+    .why-us {
+      background-color: var(--primary-bg); /* Or var(--secondary-bg) for contrast */
+      padding: var(--section-padding);
+      margin: 0 auto; /* Removed margin-top/bottom, handled by section padding */
+      max-width: 1100px;
       text-align: left;
-      border-radius: 10px;
     }
-    .why h2 {
-      color: #1da1f2;
+
+    .why-us h2.section-title {
       text-align: center;
+      color: var(--accent-color);
     }
+    .why-us .intro-text {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      font-size: 1.1em;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .why-columns {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
-      justify-content: space-between;
+      gap: 40px;
+      justify-content: space-around; /* Better distribution */
     }
-    .why-columns div {
-      flex: 1 1 45%;
+
+    .why-columns > div { /* Direct children for better control */
+      flex: 1 1 400px; /* Allow flex-grow, base width 400px */
+      background-color: var(--card-bg);
+      padding: var(--card-padding);
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
-    .service-card {
-      background-color: #1a1d23;
-      padding: 20px;
-      margin: 20px auto;
-      border-radius: 10px;
-      max-width: 300px;
-      color: #e0e0e0;
+    .why-columns h3 {
+        color: var(--accent-color);
+        margin-top: 0;
+        font-size: 1.4em;
     }
-    .service-title {
-      font-weight: bold;
-      margin-bottom: 10px;
-      font-size: 1.2em;
+    .why-columns p {
+        color: var(--text-muted);
+        font-size: 1em;
+        line-height: 1.7;
     }
+
+
     .services-container {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 30px; /* Increased gap */
+      margin-top: 30px;
     }
-    .quote {
-      background-color: #dff1e4;
-      color: #0f2417;
-      padding: 60px 20px;
+
+    .service-card {
+      background-color: var(--card-bg);
+      padding: var(--card-padding);
+      border-radius: var(--border-radius);
+      flex: 1 1 300px; /* Allow growth, basis of 300px */
+      max-width: 350px; /* Max width for better look */
+      color: var(--text-color);
+      text-align: left;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .quote h2 {
-      font-size: 2em;
-      margin-bottom: 10px;
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     }
-    .quote p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
+
+    .service-title {
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 1.3em;
+      color: var(--accent-color);
     }
-    .quote form {
-      max-width: 400px;
-      margin: auto;
+    .service-card p {
+        font-size: 0.95em;
+        color: var(--text-muted);
+    }
+
+    #about {
+        background-color: var(--secondary-bg);
+    }
+
+
+    /* Contact/Quote Section - Merged and Restyled */
+    .contact-quote-section {
+      background-color: var(--card-bg); /* Consistent dark theme */
+      padding: var(--section-padding);
+    }
+    .contact-quote-section .section-title {
+      color: var(--heading-color);
+    }
+    .contact-quote-section .section-subtitle {
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+    .contact-details {
+        margin-bottom: 40px;
+    }
+    .contact-details p {
+        font-size: 1.1em;
+        color: var(--text-color);
+        margin: 8px 0;
+    }
+    .contact-details a {
+        color: var(--accent-color);
+        text-decoration: none;
+    }
+    .contact-details a:hover {
+        text-decoration: underline;
+    }
+
+
+    .custom-form {
       display: flex;
+      flex-direction: column;
+      gap: 20px; /* Increased gap */
+      max-width: 600px; /* Wider form */
+      margin: auto;
+      padding: 30px;
+      background-color: var(--secondary-bg); /* Slightly different from section bg */
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
-    .quote input[type="email"] {
-      flex: 1;
-      padding: 10px;
-      border: none;
+
+    .custom-form label {
+      display: flex;
+      flex-direction: column;
+      color: var(--text-color);
       font-size: 1em;
+      font-weight: 600;
+      text-align: left;
     }
-    .quote button {
-      background-color: #0f2417;
+
+    .custom-form input,
+    .custom-form textarea {
+      padding: 12px 15px; /* More padding */
+      margin-top: 8px;
+      border: 1px solid #333; /* Subtle border */
+      border-radius: 5px;
+      font-size: 1em;
+      background-color: #2a2d34; /* Darker input field */
+      color: var(--text-color);
+      font-family: var(--font-primary);
+    }
+    .custom-form input:focus,
+    .custom-form textarea:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 2px var(--accent-color);
+    }
+
+    .custom-form button {
+      padding: 12px 25px;
+      background-color: var(--accent-color);
       color: white;
       border: none;
-      padding: 10px 20px;
-      font-size: 1em;
+      border-radius: var(--border-radius);
+      font-size: 1.1em;
+      font-weight: 600;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+      align-self: flex-start; /* Align button to the left */
     }
+
+    .custom-form button:hover {
+      background-color: var(--accent-hover-color);
+    }
+
     footer {
-      background-color: #0c0e12;
-      padding: 20px;
+      background-color: #0c0e12; /* Even darker for footer */
+      padding: 30px 20px;
       font-size: 0.9em;
-      color: #888;
+      color: var(--text-muted);
+      border-top: 1px solid #2a2d34;
     }
-    .custom-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 500px;
-  margin: auto;
-  padding: 20px;
-  background-color: #1a1d23;
-  border-radius: 10px;
-}
 
-.custom-form label {
-  display: flex;
-  flex-direction: column;
-  color: #e0e0e0;
-  font-size: 1em;
-  text-align: left;
-}
-
-.custom-form input,
-.custom-form textarea {
-  padding: 10px;
-  margin-top: 5px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-}
-
-.custom-form button {
-  padding: 10px 20px;
-  background-color: #1da1f2;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-}
-
-.custom-form button:hover {
-  background-color: #1482c7;
-}
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      header h1.site-title {
+        font-size: 2.2em;
+      }
+      header p.tagline {
+        font-size: 1em;
+      }
+      nav a {
+        margin: 0 10px;
+        font-size: 1em;
+      }
+      .hero h2 {
+        font-size: 2em;
+      }
+      .hero p {
+        font-size: 1.1em;
+      }
+      .why-columns {
+        gap: 20px;
+      }
+      .why-columns > div {
+        flex-basis: 100%; /* Stack columns */
+      }
+      .service-card {
+        flex-basis: calc(50% - 15px); /* Two cards per row, adjust for gap */
+        max-width: none;
+      }
+      .custom-form button {
+        align-self: stretch; /* Full width button on mobile */
+      }
+    }
+    @media (max-width: 480px) {
+        .service-card {
+            flex-basis: 100%; /* One card per row on small screens */
+        }
+         header img.logo {
+            width: 60px;
+        }
+    }
 
   </style>
 </head>
 <body>
   <header>
-    
-    <img src="assets/img/Selawi.png" alt="Selawi Logo">
-    <h1>Selawi</h1>
+    <img src="assets/img/Selawi.png" alt="Selawi Logo" class="logo">
+    <h1 class="site-title">Selawi</h1>
+    <p class="tagline">Securing Your Digital & Physical World</p>
     <nav>
+      <a href="#hero">Home</a>
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section class="why">
-    <h2>Why Selawi?</h2>
-    <h3 style="text-align:center; color:#ccc;">Security is needed!</h3>
+  <section id="hero" class="hero">
+    <h2>Your Trusted Partner in Advanced Security</h2>
+    <p>Selawi delivers cutting-edge cybersecurity and surveillance solutions, tailored to protect your assets and provide you with unparalleled peace of mind.</p>
+    <a href="#contact" class="btn">Get a Free Consultation</a>
+  </section>
+
+  <section class="why-us" id="why-selawi">
+    <h2 class="section-title">Why Choose Selawi?</h2>
+    <p class="intro-text">In an ever-evolving threat landscape, proactive and intelligent security is not a luxury—it's essential. We founded Selawi to bridge the gap between complex technology and practical, effective protection for homes and businesses.</p>
     <div class="why-columns">
       <div>
-        <p>In today’s world, security is not a luxury—it’s a necessity. That’s why we started our security system business: to give homes and businesses the protection they deserve with cutting-edge surveillance technology. With years of experience in networking and cybersecurity, we saw a major gap in the market—many security systems were outdated, unreliable, or simply too complex for the average user. So, we set out to change that. We built our business on the promise of high-quality, easy-to-use, and expertly installed security systems tailored to each client’s needs. Whether you need a single-camera setup or a full-scale, remotely monitored system, we make security simple, effective, and hassle-free.</p>
+        <h3>Expertise & Innovation</h3>
+        <p>With years of experience in networking, cybersecurity, and physical security, our team leverages the latest technologies to design robust systems. We're not just installers; we're security architects committed to providing solutions that are both cutting-edge and user-friendly.</p>
       </div>
       <div>
-        <p>What sets us apart? We don’t just install cameras—we provide peace of mind. Our team specializes in designing smart security solutions that integrate seamlessly with your home or business network, allowing you to monitor your property from anywhere, anytime. We use only the best equipment, backed by professional installation and top-tier customer support. No more blind spots, no more security worries—just reliable protection you can count on. When it comes to keeping what matters most safe, we’re the team you can trust. Ready to upgrade your security? Let’s get started today!</p>
+        <h3>Tailored Solutions, Lasting Peace of Mind</h3>
+        <p>We understand that every client's needs are unique. That’s why we offer personalized consultations to create security systems—from single-camera setups to comprehensive, remotely monitored networks—that perfectly fit your requirements and budget. Our goal is to make top-tier security simple, effective, and hassle-free.</p>
       </div>
     </div>
   </section>
 
   <section id="services">
-    <h2>Our Services</h2>
+    <h2 class="section-title">Our Core Services</h2>
+    <p class="section-subtitle">Comprehensive security solutions designed to protect what matters most to you.</p>
     <div class="services-container">
       <div class="service-card">
-        <div class="service-title">Camera Systems</div>
-        <p>High-performance surveillance solutions for homes and businesses.</p>
+        <!-- Optional: Add an icon here, e.g., <i class="fas fa-video"></i> -->
+        <div class="service-title">Advanced Camera Systems</div>
+        <p>State-of-the-art IP camera systems offering crystal-clear HD & 4K surveillance, remote access, and intelligent analytics for homes and businesses.</p>
       </div>
       <div class="service-card">
+        <!-- Optional: Add an icon here, e.g., <i class="fas fa-shield-alt"></i> -->
         <div class="service-title">Cybersecurity Consulting</div>
-        <p>Secure your infrastructure with professional audits and risk assessments.</p>
+        <p>Fortify your digital defenses. We provide expert audits, risk assessments, and strategic planning to protect your infrastructure from evolving cyber threats.</p>
       </div>
       <div class="service-card">
+        <!-- Optional: Add an icon here, e.g., <i class="fas fa-user-secret"></i> -->
         <div class="service-title">Penetration Testing</div>
-        <p>Identify and eliminate vulnerabilities before attackers do.</p>
+        <p>Proactively identify and mitigate vulnerabilities. Our ethical hacking services simulate real-world attacks to ensure your systems are secure and resilient.</p>
       </div>
     </div>
   </section>
 
   <section id="about">
-    <h2>About Selawi</h2>
-    <p>We are a technology company committed to protecting your digital and physical spaces. Our team of experts brings years of experience in security, surveillance, and ethical hacking.</p>
+    <h2 class="section-title">About Selawi</h2>
+    <p class="section-subtitle" style="max-width: 800px;">Selawi was founded on the principle that robust security should be accessible, intelligent, and seamlessly integrated. We are a dedicated team of certified professionals passionate about protecting your digital and physical spaces. Our expertise spans surveillance technology, network security, and ethical hacking, allowing us to offer holistic security strategies. We pride ourselves on transparency, reliability, and unwavering commitment to our clients' safety and satisfaction.</p>
   </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: mail@selawi.info</p>
-    <p>Phone: +1 (708) 247-7521</p>
-  </section>
+  <section id="contact" class="contact-quote-section">
+    <h2 class="section-title">Ready to Enhance Your Security?</h2>
+    <p class="section-subtitle">Let's discuss your needs. Reach out for a personalized consultation and quote.</p>
 
-  <section class="quote">
-    <h2>Get a quote today!</h2>
-    <p>Sign up to contact one of our support team.</p>
-    <!-- modify this form HTML and place wherever you want your form -->
-    <form
-    action="https://formspree.io/f/xgvyvpen"
-    method="POST"
-    class="custom-form"
-  >
-    <label>
-      Your email:
-      <input type="email" name="email">
-    </label>
-  
-    <label>
-      Your message:
-      <textarea name="message"></textarea>
-    </label>
-  
-    <button type="submit">Send</button>
-  </form>
-      
- 
+    <div class="contact-details">
+        <p>Email: <a href="mailto:info@selawitech.com">info@selawitech.com</a></p>
+        <p>Phone: <a href="tel:+17082477521">+1 (708) 247-7521</a></p>
+    </div>
+
+    <form action="https://formspree.io/f/xgvyvpen" method="POST" class="custom-form">
+      <label>
+        Your Name:
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Your Email:
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        How can we help you?
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <footer>
-    <p>&copy; 2025 Selawi. All rights reserved.</p>
+    <p>© <span id="currentYear">2024</span> Selawi. All rights reserved.</p>
+    <!-- You can add social media links or other footer info here -->
   </footer>
+
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
