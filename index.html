@@ -121,6 +121,48 @@
       font-size: 0.9em;
       color: #888;
     }
+    .custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background-color: #1a1d23;
+  border-radius: 10px;
+}
+
+.custom-form label {
+  display: flex;
+  flex-direction: column;
+  color: #e0e0e0;
+  font-size: 1em;
+  text-align: left;
+}
+
+.custom-form input,
+.custom-form textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.custom-form button {
+  padding: 10px 20px;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.custom-form button:hover {
+  background-color: #1482c7;
+}
+
   </style>
 </head>
 <body>
@@ -181,23 +223,23 @@
     <h2>Get a quote today!</h2>
     <p>Sign up to contact one of our support team.</p>
     <!-- modify this form HTML and place wherever you want your form -->
-<form
-action="https://formspree.io/f/xgvyvpen"
-method="POST"
->
-<label>
-  Your email:
-  <input type="email" name="email">
-</label>
-
-<label>
-  Your message:
-  <textarea name="message"></textarea>
-</label>
-
-<!-- your other form fields go here -->
-<button type="submit">Send</button>
-</form>
+    <form
+    action="https://formspree.io/f/xgvyvpen"
+    method="POST"
+    class="custom-form"
+  >
+    <label>
+      Your email:
+      <input type="email" name="email">
+    </label>
+  
+    <label>
+      Your message:
+      <textarea name="message"></textarea>
+    </label>
+  
+    <button type="submit">Send</button>
+  </form>
       
  
   </section>
